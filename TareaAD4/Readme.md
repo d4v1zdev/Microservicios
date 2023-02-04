@@ -12,7 +12,7 @@ Tablas:
 
 
 
-![Captura de pantalla 2023-02-04 a las 15.57.16]([**https://raw.githubusercontent.com/**d4v1zdev/microservicios/main/TareaAD4/img/ventasbbdd_2023](https://raw.githubusercontent.com/d4v1zdev/microservicios/main/TareaAD4/img/ventasbbdd_2023).png)
+![Captura de pantalla 2023-02-04 a las 15.57.16](https://github.com/d4v1zdev/Microservicios/blob/main/TareaAD4/img/ventas2023_bbdd.png)
 
 
 
