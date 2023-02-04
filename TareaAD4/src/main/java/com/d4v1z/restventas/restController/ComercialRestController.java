@@ -18,14 +18,14 @@ import com.d4v1z.restventas.modelo.entities.Comercial;
 import com.d4v1z.restventas.modelo.service.ComercialService;
 
 @RestController
-@RequestMapping("/apirest/comercial")
+@RequestMapping("/comercial")
 public class ComercialRestController {
 	@Autowired
 	private ComercialService coServ;
 			
 	
 	/**
-	 * Metodo Get para obtener todos los comerciales
+	 * Metodo GET para obtener todos los comerciales
 	 * @return los datos de los comerciales
 	 */
 	@GetMapping("/todos")
@@ -35,7 +35,7 @@ public class ComercialRestController {
 	}
 	
 	/**
-	 * Este metodo devuelve los datos de un comercial pasando el id del comercial
+	 * Este metodo GET devuelve los datos de un comercial pasando el id del comercial
 	 * Se modifica el httpResponse si el comercial existe o no
 	 * @param id_comercial
 	 * @return los datos del comercial
@@ -44,7 +44,8 @@ public class ComercialRestController {
 	public ResponseEntity<Object> buscarUno(@PathVariable("id") int id_comercial) {
 	  Comercial comercial = coServ.buscarUna(id_comercial);
 	  if (comercial == null) {
-	    return new ResponseEntity<>("No se encontró el comercial con el ID introducido", HttpStatus.NOT_FOUND);
+		  return new ResponseEntity<>("El comercial con id " + id_comercial 
+				  + " no se encontró", HttpStatus.NOT_FOUND);
 	  }
 	  return new ResponseEntity<>(comercial, HttpStatus.OK);
 	}
@@ -90,7 +91,8 @@ public class ComercialRestController {
 		if (coServ.eliminarComercial(id_comercial)) {
 			return new ResponseEntity<>("COMERCIAL ELIMINADO", HttpStatus.OK);
 		}else {
-			return new ResponseEntity<>("COMERCIAL NO EXISTE", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>("EL COMERCIAL CON EL ID " 
+					+ id_comercial + " NO SE ENCONTRO", HttpStatus.NOT_FOUND);
 		}
 		
 	}
@@ -105,15 +107,14 @@ public class ComercialRestController {
 	public ResponseEntity<Object> porComercial(@PathVariable("id") int idCliente) {
 	List<Comercial> comerciales = coServ.verComPorCliente(idCliente);
 	if (comerciales.isEmpty()) {
-		return new ResponseEntity<>("No se encontró ningún comercial con ese ID de cliente"
-				, HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>("El cliente con id " + idCliente + " no se encontró", HttpStatus.NOT_FOUND);
 	}
 		return new ResponseEntity<>(comerciales, HttpStatus.OK);
 	}
 
 	
 	/**
-	 * Nos devuelve la lista de comerciales que han tenido algun pedido
+	 * Metod GET que nos devuelve la lista de comerciales que han tenido algun pedido
 	 * @return lista de comerciales
 	 */
 	@GetMapping("/conpedidos")
