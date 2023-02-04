@@ -11,6 +11,6 @@ public interface ComercialService {
 	Comercial buscarUna(int id_comercial);
 	List<Comercial> buscarTodas();
 	Comercial modificarComercial(Comercial comercial);
-	List<Comercial> verComPorCliente(int idCliente);
+	List<Comercial> listaComercialesCliente(int idCliente);
 
 }

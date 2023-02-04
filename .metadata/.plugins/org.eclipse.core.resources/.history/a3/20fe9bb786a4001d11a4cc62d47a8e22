@@ -45,12 +45,6 @@ public class ComercialRestController {
 		return coServ.modificarComercial(comercial);
 		
 	}
-	/**
-	 * Metodo DELETE para eliminar de la bbdd el comercial cuyo id coincida
-	 * @param id_comercial
-	 * @return Comercial eliminado si el id existe o Comercial no existe si el Id 
-	 * 		   no existe
-	 */
 	
 	@DeleteMapping("/eliminar/{id}")
 	public String eliminar(@PathVariable("id") int id_comercial) {
@@ -60,17 +54,6 @@ public class ComercialRestController {
 			else
 				return "Comercial no existe";
 		
-	}
-	
-	/**
-	 * Metodo Get Devolver la lista de los comerciales 
-	 * que han atendido pedidos del cliente que coincida con ese id.
-	 * @param idCliente
-	 * @return lista de comerciales
-	 */
-	@GetMapping("/bycliente/{id}")
-	public List<Comercial> porComercial(@PathVariable("id") int idCliente) {
-		return coServ.verComPorCliente(idCliente);
 	}
 
 }

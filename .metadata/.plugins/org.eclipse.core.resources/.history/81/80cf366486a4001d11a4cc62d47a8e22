@@ -54,15 +54,12 @@ public class ComercialServiceImplMy8 implements ComercialService {
 		return null;
 	}
 	
-	/**
-	 * Este metodo devuelve la lista de comerciales que han atendido
-	 * a 1 cliente pasando el Id de cliente
-	 */
+	//Con este método devolvemos una lista de los comerciales que han atendido a un cliente introduciendo el idCliente
 		@Override
 		public List<Comercial> verComPorCliente(int idCliente) {
 			
 			try {
-	            return this.comRep.verComercialXXCliente(idCliente);
+	            return this.comRep.listaComercialesCliente(idCliente);
 	        } catch ( Exception e ) {
 	            e.printStackTrace();
 	            return null;
