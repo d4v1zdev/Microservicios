@@ -12,7 +12,7 @@ Tablas:
 
 
 
-![Captura de pantalla 2023-02-04 a las 15.57.16](/Users/david/workspaces/01_apirest/TareaAD4/img/Captura de pantalla 2023-02-04 a las 15.57.16.png)
+![Captura de pantalla 2023-02-04 a las 15.57.16]([**https://raw.githubusercontent.com/**d4v1zdev/microservicios/main/TareaAD4/img/ventasbbdd_2023](https://raw.githubusercontent.com/d4v1zdev/microservicios/main/TareaAD4/img/ventasbbdd_2023).png)
 
 
 
