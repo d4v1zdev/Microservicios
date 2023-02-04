@@ -1,0 +1,10 @@
+package com.d4v1z.restventas.restController;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/apirest/pedidos")
+public class PedidoRestController {
+
+}

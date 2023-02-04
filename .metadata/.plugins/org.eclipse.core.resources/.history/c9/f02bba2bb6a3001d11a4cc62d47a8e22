@@ -1,0 +1,5 @@
+package com.d4v1z.restventas.modelo.repository;
+
+public interface ComercialRepository {
+
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="TareaAD4">
+		<class>com.d4v1z.restventas.modelo.entities.Cliente</class>
+		<class>com.d4v1z.restventas.modelo.entities.Comercial</class>
+		<class>com.d4v1z.restventas.modelo.entities.Pedido</class>
+	</persistence-unit>
+</persistence>

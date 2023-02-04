@@ -1,0 +1,8 @@
+package com.d4v1z.restventas;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ComercialRestController {
+
+}
