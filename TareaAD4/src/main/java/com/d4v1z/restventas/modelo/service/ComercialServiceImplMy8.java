@@ -45,7 +45,7 @@ public class ComercialServiceImplMy8 implements ComercialService {
 	/**
 	 * Metodo para buscar un comercial pasando el id del comercial
 	 */
-
+	
 	@Override
 	public Comercial buscarUna(int id_comercial) {
 		// TODO Auto-generated method stub
