@@ -68,9 +68,20 @@ public class ComercialRestController {
 	 * @param idCliente
 	 * @return lista de comerciales
 	 */
+	
 	@GetMapping("/bycliente/{id}")
 	public List<Comercial> porComercial(@PathVariable("id") int idCliente) {
 		return coServ.verComPorCliente(idCliente);
+	}
+	
+	/**
+	 * Nos devuelve la lista de comerciales que han tenido algun pedido
+	 * @return lista de comerciales
+	 */
+	
+	@GetMapping("/conpedidos")
+	public List<Comercial> conPedidos() {
+		return this.coServ.comercYPed();
 	}
 
 }

@@ -68,6 +68,17 @@ public class ComercialServiceImplMy8 implements ComercialService {
 	            return null;
 	        }
 		}
+		
+		@Override
+	    public List<Comercial> comercYPed() {
+
+	        try {
+	            return this.comRep.comercialConPedidos();
+	        } catch ( Exception e ) {
+	            e.printStackTrace();
+	            return null;
+	        }
+	    }
 	
 	
 
