@@ -23,34 +23,6 @@ public class ComercialRestController {
 	@Autowired
 	private ComercialService coServ;
 			
-	
-	/**
-	 * Metodo GET para obtener todos los comerciales
-	 * @return los datos de los comerciales
-	 */
-	@GetMapping("/todos")
-	public ResponseEntity<List<Comercial>> todas() {
-	  List<Comercial> comerciales = coServ.buscarTodas();
-	  return new ResponseEntity<>(comerciales, HttpStatus.OK);
-	}
-	
-	/**
-	 * Este metodo GET devuelve los datos de un comercial pasando el id del comercial
-	 * Se modifica el httpResponse si el comercial existe o no
-	 * @param id_comercial
-	 * @return los datos del comercial
-	 */
-	@GetMapping("/uno/{id}")
-	public ResponseEntity<Object> buscarUno(@PathVariable("id") int id_comercial) {
-	  Comercial comercial = coServ.buscarUna(id_comercial);
-	  if (comercial == null) {
-		  return new ResponseEntity<>("El comercial con id " + id_comercial 
-				  + " no se encontró", HttpStatus.NOT_FOUND);
-	  }
-	  return new ResponseEntity<>(comercial, HttpStatus.OK);
-	}
-
-
 	/**
 	 * Generamos el alta de un comercial. Como mejora queda la posibilidad de controlar
 	 * con una funcion booleana en la clase Comercial, el tipo de dato que se introduce
@@ -64,18 +36,6 @@ public class ComercialRestController {
 	public Comercial alta(@RequestBody Comercial comercial) {
 		
 		return coServ.altaComercial(comercial);
-		
-	}
-		
-	/**
-	 * Metodo PUT para modificar el comercial
-	 * @param comercial
-	 * @return el comercial ya modificado
-	 */
-	@PutMapping("/modificar")
-	public Comercial modificar(@RequestBody Comercial comercial) {
-		
-		return coServ.modificarComercial(comercial);
 		
 	}
 	
@@ -98,6 +58,22 @@ public class ComercialRestController {
 	}
 	
 	/**
+	 * Este metodo GET devuelve los datos de un comercial pasando el id del comercial
+	 * Se modifica el httpResponse si el comercial existe o no
+	 * @param id_comercial
+	 * @return los datos del comercial
+	 */
+	@GetMapping("/uno/{id}")
+	public ResponseEntity<Object> buscarUno(@PathVariable("id") int id_comercial) {
+	  Comercial comercial = coServ.buscarUna(id_comercial);
+	  if (comercial == null) {
+		  return new ResponseEntity<>("El comercial con id " + id_comercial 
+				  + " no se encontró", HttpStatus.NOT_FOUND);
+	  }
+	  return new ResponseEntity<>(comercial, HttpStatus.OK);
+	}
+
+	/**
 	 * Metodo que devuelve los comerciales que han atendido pedidos del cliente que
 	 * corresponda con el ID que hemos pasado
 	 * @param idCliente
@@ -111,7 +87,6 @@ public class ComercialRestController {
 	}
 		return new ResponseEntity<>(comerciales, HttpStatus.OK);
 	}
-
 	
 	/**
 	 * Metod GET que nos devuelve la lista de comerciales que han tenido algun pedido
@@ -121,5 +96,33 @@ public class ComercialRestController {
 	public List<Comercial> conPedidos() {
 		return this.coServ.comercYPed();
 	}
-
+	
+	/**
+	 * METODOS NO PEDIDOS EN TAREA
+	 */
+	
+	/**
+	 * Metodo PUT para modificar el comercial
+	 * @param comercial
+	 * @return el comercial ya modificado
+	 */
+	@PutMapping("/modificar")
+	public Comercial modificar(@RequestBody Comercial comercial) {
+		
+		return coServ.modificarComercial(comercial);
+		
+	}
+	
+	/**
+	 * Metodo GET para obtener todos los comerciales
+	 * @return los datos de los comerciales
+	 */
+	@GetMapping("/todos")
+	public ResponseEntity<List<Comercial>> todas() {
+	  List<Comercial> comerciales = coServ.buscarTodas();
+	  return new ResponseEntity<>(comerciales, HttpStatus.OK);
+	}
+	
+		
+	
 }

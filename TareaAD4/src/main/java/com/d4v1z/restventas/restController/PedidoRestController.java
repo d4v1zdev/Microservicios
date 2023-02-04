@@ -36,6 +36,4 @@ public class PedidoRestController {
 	    return new ResponseEntity<>(pedidos, HttpStatus.OK);
 	  }
 	}
-
-
 }
