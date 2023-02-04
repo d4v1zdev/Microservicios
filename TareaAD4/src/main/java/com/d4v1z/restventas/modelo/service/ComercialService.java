@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.d4v1z.restventas.modelo.entities.Comercial;
 
+/**
+ * Creacion de interface para implementar mas adelante
+ * @author david
+ *
+ */
+
 public interface ComercialService {
 	
 	Comercial altaComercial(Comercial comercial);
