@@ -14,6 +14,10 @@ public class ComercialServiceImplMy8 implements ComercialService {
 	@Autowired
 	private ComercialRepository comRep;
 	
+	/**
+	 * Metodo para dar de alta al comercial
+	 */
+	
 	@Override
 	public Comercial altaComercial(Comercial comercial) {
 		if (buscarUna(comercial.getIdComercial()) == null)
@@ -21,6 +25,9 @@ public class ComercialServiceImplMy8 implements ComercialService {
 		return null;
 	}
 	
+	/**
+	 * Metodo para eliminar un comercial pasando el id del comercial
+	 */
 	
 	@Override
 	public boolean eliminarComercial(int id_comercial) {
@@ -34,18 +41,30 @@ public class ComercialServiceImplMy8 implements ComercialService {
 		}
 		return false;
 	}
+	
+	/**
+	 * Metodo para buscar un comercial pasando el id del comercial
+	 */
 
 	@Override
 	public Comercial buscarUna(int id_comercial) {
 		// TODO Auto-generated method stub
 		return comRep.findById(id_comercial).orElse(null);
 	}
+	
+	/**
+	 * Metodo para buscar todos los Comerciales
+	 */
 
 	@Override
 	public List<Comercial> buscarTodas() {
 		// TODO Auto-generated method stub
 		return comRep.findAll();
 	}
+	
+	/**
+	 * Metodo para modificar los datos del comercial
+	 */
 
 	@Override
 	public Comercial modificarComercial(Comercial comercial) {
@@ -68,6 +87,10 @@ public class ComercialServiceImplMy8 implements ComercialService {
 	            return null;
 	        }
 		}
+		/**
+		 * Metodo que devuelve la lista de comerciales que hayan atendido
+		 * algun pedido
+		 */
 		
 		@Override
 	    public List<Comercial> comercYPed() {

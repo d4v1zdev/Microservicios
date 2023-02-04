@@ -39,6 +39,12 @@ public class ComercialRestController {
 		
 	}
 	
+	/**
+	 * Metodo PUT para modificar el comercial
+	 * @param comercial
+	 * @return el comercial ya modificado
+	 */
+	
 	@PutMapping("/modificar")
 	public Comercial modificar(@RequestBody Comercial comercial) {
 		
