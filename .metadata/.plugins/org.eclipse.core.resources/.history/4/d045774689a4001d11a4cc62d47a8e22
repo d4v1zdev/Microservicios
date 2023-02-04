@@ -49,7 +49,7 @@ public class ComercialRestController {
 	 * Metodo DELETE para eliminar de la bbdd el comercial cuyo id coincida
 	 * @param id_comercial
 	 * @return Comercial eliminado si el id existe o Comercial no existe si el Id 
-	 * 		exite
+	 * 		exite.
 	 */
 	
 	@DeleteMapping("/eliminar/{id}")
